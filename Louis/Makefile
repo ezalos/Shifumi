@@ -6,7 +6,7 @@
 #    By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/12 15:04:16 by ldevelle          #+#    #+#              #
-#    Updated: 2019/05/20 18:56:30 by root             ###   ########.fr        #
+#    Updated: 2019/05/20 19:17:07 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ VISU	= visu-hex
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
+CFLAGS =
 
 DFLAGS = -Wall -Wextra -Werror -fsanitize=address,undefined -g3 -pedantic\
 -O2 -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int\
