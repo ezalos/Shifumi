@@ -6,11 +6,11 @@
 #    By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/12 15:04:16 by ldevelle          #+#    #+#              #
-#    Updated: 2019/05/20 00:35:48 by root             ###   ########.fr        #
+#    Updated: 2019/05/20 17:46:12 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= lem-in
+NAME 	= Shifumi
 VISU	= visu-hex
 
 CC = gcc
@@ -40,10 +40,7 @@ DFLAGS = -Wall -Wextra -Werror -fsanitize=address,undefined -g3 -pedantic\
 ##############################################################################
 ##############################################################################
 
-SRCS_LI		=	main\
-						init\
-						print\
-						calcul
+SRCS_LI		=	main
 
 # SRCS_VS		=	visu-hex
 
