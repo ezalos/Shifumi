@@ -6,7 +6,7 @@
 /*   By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 13:21:20 by ldevelle          #+#    #+#             */
-/*   Updated: 2019/05/20 12:34:48 by root             ###   ########.fr       */
+/*   Updated: 2019/05/20 18:51:31 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define LEFT						2
 # define UP							3
 
-# include "../../libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 
 typedef struct		s_lemin
 {
@@ -77,4 +77,6 @@ t_god		*init(int fd);
 int		print_matrix(t_tab *lem_in);
 int				lets_calcul(t_god *god);
 
+char luigi(char answer_joep);
+char joep(char answer_luigi);
 #endif

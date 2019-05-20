@@ -6,7 +6,7 @@
 #    By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/12 15:04:16 by ldevelle          #+#    #+#              #
-#    Updated: 2019/05/20 17:46:12 by root             ###   ########.fr        #
+#    Updated: 2019/05/20 18:56:30 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,9 @@ DFLAGS = -Wall -Wextra -Werror -fsanitize=address,undefined -g3 -pedantic\
 ##############################################################################
 ##############################################################################
 
-SRCS_LI		=	main
+SRCS_LI		=	main\
+						joep\
+						louis
 
 # SRCS_VS		=	visu-hex
 
@@ -62,8 +64,8 @@ A_OBJ		= $(patsubst %,$(DIR_OBJ)%.o,$(SRCS_LI))
 
 OBJ 		= $(patsubst %,%.o,$(SRCS_LI))
 
-LIB_DIR		= ./../../libft
-LIB_DIR		= ./../libft
+LIB_DIR		= ./../../../libft
+LIB_DIR		= ./libft
 HEAD		= head.h
 HEAD_DIR	= ./includes
 HEAD_PATH	= $(HEAD_DIR)/$(HEAD)
