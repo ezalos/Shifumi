@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 12:27:19 by root              #+#    #+#             */
-/*   Updated: 2019/05/20 19:12:49 by root             ###   ########.fr       */
+/*   Updated: 2019/05/21 00:20:43 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char			win(char a, char b)
 		return (2);
 }
 
-void print_dos(char victory_luigi, char victory_joep, int draw)
+void print_dos(char victory_luigi, char victory_joep, int draw, char tmp)
 {
 	int shift;
 	int lin;
@@ -38,15 +38,18 @@ void print_dos(char victory_luigi, char victory_joep, int draw)
 	ft_rgb_bcolor(48 + shift, 10 + shift, 36 + shift);
 	ft_place_cursor(lin++, col);
 	ft_printf("%~{?}Louis : %*d", 4, (int)victory_luigi);
+	if (tmp == 2 && victory_joep + victory_luigi > 98)
+		ft_printf("X");
+	else
+		ft_printf(" ");
 	ft_place_cursor(lin++, col);
 	ft_printf("Joep  : %*d", 4, (int)victory_joep);
+	if (tmp == 1 && victory_joep + victory_luigi > 98)
+		ft_printf("X");
+	else
+		ft_printf(" ");
 	ft_place_cursor(lin, col);
 	ft_printf("Draw  : %*d%~{}", 4, (int)draw);
-	ft_wait_pls(0);
-	ft_wait_pls(0);
-	ft_wait_pls(0);
-	ft_wait_pls(0);
-	ft_wait_pls(0);
 }
 
 void print(char tmp)
@@ -57,27 +60,24 @@ void print(char tmp)
 	ft_place_cursor(0, 0);
 	if (tmp == 2)
 	{
-		ft_printf("%~{255;96;0}X");
+		ft_printf("%~{255;96;0}");
 		fd = open("./display/louis", O_RDONLY);
-		ft_printf("FD= %d\n", fd);
 		while (get_next_line(fd, &line) > 0)
 			ft_printf("%s\n", line);
 		close(fd);
 	}
 	else if (tmp == 1)
 	{
-		ft_printf("%~{155;155;255}Y");
+		ft_printf("%~{155;155;255}");
 		fd = open("./display/joep", O_RDONLY);
-		ft_printf("FD= %d\n", fd);
 		while (get_next_line(fd, &line) > 0)
 			ft_printf("%s\n", line);
 		close(fd);
 	}
 	else
 	{
-		ft_printf("%~{255;155;255}Z");
+		ft_printf("%~{255;155;255}");
 		fd = open("./display/draw", O_RDONLY);
-		ft_printf("FD= %d\n", fd);
 		while (get_next_line(fd, &line) > 0)
 			ft_printf("%s\n", line);
 		close(fd);
@@ -93,9 +93,8 @@ int		main(void)
 	char			tmp;
 	int				draws;
 
-	while (victory_joep + victory_luigi < 100)
+	while (victory_joep + victory_luigi < 99)
 	{
-		_C_CLEAR_SCREEN;
 			tmp = luigi(answer_joep);
 			answer_joep = joep(answer_luigi);
 			answer_luigi = tmp;
@@ -107,7 +106,13 @@ int		main(void)
 			else
 				draws++;
 			print(tmp);
-			print_dos(victory_luigi, victory_joep, draws);
+			print_dos(victory_luigi, victory_joep, draws, tmp);
 	}
+	ft_wait_pls(0);
+	ft_wait_pls(0);
+	ft_wait_pls(0);
+	ft_wait_pls(0);
+	ft_wait_pls(0);
+	ft_wait_pls(0);
 	return (0);
 }

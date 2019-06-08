@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 18:51:49 by root              #+#    #+#             */
-/*   Updated: 2019/05/20 19:17:17 by root             ###   ########.fr       */
+/*   Updated: 2019/05/20 19:35:22 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,7 @@ int		ft_len(char *str)
 
 int		randn(int seed)
 {
-	int j = 200000000;
-
-	while (j)
-		j--;
-	int	i = time(NULL);
+	int	i = (int)clock();
 	return((i % 3));
 }
 
@@ -96,5 +92,5 @@ char	fighter(char move)
 
 int joep(char move)
 {
-	printf("%c\n", fighter(move));
+	return (fighter(move));
 }
